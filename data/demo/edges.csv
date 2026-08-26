@@ -1,0 +1,4 @@
+edge_id,source,target,layer,commodity,capacity,cost_per_unit,transit_time_days,canonical_flow_id,unit,valid_from,valid_to,transaction_time,evidence_class
+demo-e1,demo-origin,demo-hub,trade,synthetic-unit,80,2,3,demo-flow-1,unit/day,2026-01-01T00:00:00+00:00,,2026-01-01T00:00:00+00:00,synthetic
+demo-e2,demo-hub,demo-destination,trade,synthetic-unit,60,3,4,demo-flow-2,unit/day,2026-01-01T00:00:00+00:00,,2026-01-01T00:00:00+00:00,synthetic
+demo-e3,demo-origin,demo-destination,trade,synthetic-unit,15,8,8,demo-flow-3,unit/day,2026-01-01T00:00:00+00:00,,2026-01-01T00:00:00+00:00,synthetic

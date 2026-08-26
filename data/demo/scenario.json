@@ -1,0 +1,17 @@
+{
+  "scenario_id": "synthetic-capacity-shock",
+  "name": "Synthetic hub-edge capacity reduction",
+  "as_of": "2026-02-01T00:00:00+00:00",
+  "analysis_cutoff": "2026-02-01T00:00:00+00:00",
+  "horizon_days": 30,
+  "random_seed": 2026,
+  "shocks": [
+    {
+      "target_type": "edge",
+      "target_id": "demo-e2",
+      "capacity_factor": 0.5,
+      "starts_at": "2026-02-01T00:00:00+00:00",
+      "rationale": "Synthetic test only"
+    }
+  ]
+}

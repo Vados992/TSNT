@@ -1,0 +1,12 @@
+{
+  "labels": ["synthetic-sector-a", "synthetic-sector-b", "synthetic-sector-c"],
+  "coefficients": [
+    [0.20, 0.10, 0.05],
+    [0.05, 0.25, 0.10],
+    [0.10, 0.05, 0.20]
+  ],
+  "final_demand": [100, 80, 60],
+  "capacity": [160, 140, 120],
+  "net_imports": [20, 15, 10],
+  "fixture": "synthetic"
+}

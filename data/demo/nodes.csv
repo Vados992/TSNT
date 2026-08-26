@@ -1,0 +1,4 @@
+node_id,name,layer,jurisdiction,valid_from,transaction_time,evidence_class
+demo-origin,Synthetic Origin,trade,DEMO,2026-01-01T00:00:00+00:00,2026-01-01T00:00:00+00:00,synthetic
+demo-hub,Synthetic Hub,trade,DEMO,2026-01-01T00:00:00+00:00,2026-01-01T00:00:00+00:00,synthetic
+demo-destination,Synthetic Destination,trade,DEMO,2026-01-01T00:00:00+00:00,2026-01-01T00:00:00+00:00,synthetic
