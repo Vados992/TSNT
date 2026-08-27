@@ -50,7 +50,10 @@ class TemporalMultiLayerGraph:
     def snapshot(self, as_of: datetime, analysis_cutoff: datetime) -> nx.MultiDiGraph:
         if analysis_cutoff > as_of:
             raise ValueError("analysis_cutoff cannot be later than as_of")
-        graph = nx.MultiDiGraph(as_of=as_of.isoformat(), analysis_cutoff=analysis_cutoff.isoformat())
+        graph = nx.MultiDiGraph(
+            as_of=as_of.isoformat(),
+            analysis_cutoff=analysis_cutoff.isoformat(),
+        )
         active_nodes = self.active_nodes(as_of, analysis_cutoff)
         for node in active_nodes:
             graph.add_node(node.node_id, record=node, layer=node.layer.value)
@@ -59,7 +62,10 @@ class TemporalMultiLayerGraph:
             missing = {edge.source, edge.target} - known_nodes
             if missing:
                 missing_text = ", ".join(sorted(missing))
-                raise ValueError(f"active edge {edge.edge_id} references missing nodes: {missing_text}")
+                message = (
+                    f"active edge {edge.edge_id} references missing nodes: {missing_text}"
+                )
+                raise ValueError(message)
             graph.add_edge(
                 edge.source,
                 edge.target,

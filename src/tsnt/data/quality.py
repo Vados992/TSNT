@@ -63,7 +63,13 @@ class QualityGate:
         edge_counts = Counter(edge.edge_id for edge in edges)
         for edge_id, count in edge_counts.items():
             if count > 1:
-                issues.append(QualityIssue("duplicate_edge_id", f"{count} versions in batch", edge_id))
+                issues.append(
+                    QualityIssue(
+                        "duplicate_edge_id",
+                        f"{count} versions in batch",
+                        edge_id,
+                    )
+                )
         flow_ids = [edge.canonical_flow_id for edge in edges if edge.canonical_flow_id]
         for flow_id, count in Counter(flow_ids).items():
             if count > 1:
@@ -78,7 +84,13 @@ class QualityGate:
             if not self.units.is_registered(edge.unit):
                 issues.append(QualityIssue("unknown_unit", edge.unit, edge.edge_id))
             if not isfinite(edge.capacity) or not isfinite(edge.cost_per_unit):
-                issues.append(QualityIssue("non_finite", "capacity or cost is non-finite", edge.edge_id))
+                issues.append(
+                    QualityIssue(
+                        "non_finite",
+                        "capacity or cost is non-finite",
+                        edge.edge_id,
+                    )
+                )
             if edge.transaction_time < edge.valid_from:
                 issues.append(
                     QualityIssue(
