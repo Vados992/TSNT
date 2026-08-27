@@ -24,6 +24,7 @@ Monte Carlo uncertainty, recovery, provenance, quality gates and backtesting.
 - bounded cross-layer cascades with convergence diagnostics;
 - seeded Monte Carlo P10/P50/P90 and exceedance probabilities;
 - recovery time and cumulative service-loss calculations;
+- one-at-a-time sensitivity analysis with dimensionless local elasticities;
 - MAE, RMSE, sMAPE, pinball loss, coverage and Brier score;
 - ICC(2,k), Kendall W, correlation/VIF and duplicate-flow controls;
 - FastAPI, CLI, PostgreSQL schema, Docker and Kubernetes deployment;
@@ -113,6 +114,8 @@ reviewed licensed client.
 - [Methodology](docs/methodology.md)
 - [Data model](docs/data-model.md)
 - [Validation and historical test protocol](docs/validation.md)
+- [Requirements traceability](docs/traceability.md)
+- [Model-card template](docs/model-card-template.md)
 - [Source registry](docs/source-registry.md)
 - [API](docs/api.md)
 - [Deployment](docs/deployment.md)

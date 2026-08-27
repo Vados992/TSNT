@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Vados992/TSNT/schemas/run-manifest.schema.json",
+  "title": "TSNT run manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id",
+    "scenario_id",
+    "created_at",
+    "code_commit",
+    "input_manifest_hash",
+    "analysis_cutoff",
+    "random_seed",
+    "model_versions",
+    "sources"
+  ],
+  "properties": {
+    "run_id": {"type": "string", "minLength": 1},
+    "scenario_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "analysis_cutoff": {"type": "string", "format": "date-time"},
+    "code_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "input_manifest_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "random_seed": {"type": "integer"},
+    "model_versions": {
+      "type": "object",
+      "additionalProperties": {"type": "string"}
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["provenance_id", "checksum_sha256", "licence_id"],
+        "properties": {
+          "provenance_id": {"type": "string"},
+          "checksum_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "licence_id": {"type": "string"}
+        }
+      }
+    }
+  }
+}

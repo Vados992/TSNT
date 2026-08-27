@@ -55,6 +55,7 @@ def run_network_scenario(
 ) -> NetworkScenarioResult:
     QualityGate().require_edges(edges)
     graph = TemporalMultiLayerGraph(nodes, edges)
+    graph.snapshot(scenario.as_of, scenario.analysis_cutoff)
     baseline_edges = graph.active_edges(scenario.as_of, scenario.analysis_cutoff)
     shocked_edges = graph.shocked_edges(
         scenario.as_of,

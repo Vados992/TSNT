@@ -2,12 +2,13 @@
 
 import csv
 from datetime import datetime
+from io import StringIO
 from pathlib import Path
 
-from tsnt.data.provenance import ProvenanceRecord
+from tsnt.data.provenance import ProvenanceRecord, sha256_bytes
 from tsnt.domain.enums import EvidenceClass, Layer
 from tsnt.domain.models import EdgeRecord
-from tsnt.ingestion.base import IngestionAdapter, IngestionBatch
+from tsnt.ingestion.base import DataAccessError, IngestionAdapter, IngestionBatch
 
 
 class CSVEdgeAdapter(IngestionAdapter):
@@ -16,8 +17,11 @@ class CSVEdgeAdapter(IngestionAdapter):
         self.provenance = provenance
 
     def fetch(self, valid_from: datetime, valid_to: datetime) -> IngestionBatch:
+        payload = self.path.read_bytes()
+        if sha256_bytes(payload) != self.provenance.checksum_sha256:
+            raise DataAccessError("CSV content does not match its provenance checksum")
         edges: list[EdgeRecord] = []
-        with self.path.open(encoding="utf-8", newline="") as handle:
+        with StringIO(payload.decode("utf-8")) as handle:
             for row in csv.DictReader(handle):
                 edge = EdgeRecord(
                     edge_id=row["edge_id"],

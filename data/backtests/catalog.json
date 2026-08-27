@@ -1,0 +1,41 @@
+{
+  "purpose": "Pre-registration catalog only; no observed or forecast values are bundled.",
+  "events": [
+    {
+      "event_id": "suez-ever-given-2021",
+      "family": "maritime_blockage",
+      "event_start": "2021-03-23",
+      "primary_source": "https://www.suezcanal.gov.eg/English/MediaCenter/News/Pages/nav_29-03-2021.aspx",
+      "data_bundled": false
+    },
+    {
+      "event_id": "eu-russian-gas-2022",
+      "family": "energy_supply",
+      "event_start": "2022-02-24",
+      "primary_source": "https://enlargement.ec.europa.eu/news/repowereu-plan-rapidly-reduce-dependence-russian-fossil-fuels-and-fast-forward-green-transition-2022-05-18_en",
+      "data_bundled": false
+    },
+    {
+      "event_id": "panama-drought-2023",
+      "family": "climate_capacity",
+      "event_start": "2023-08-10",
+      "primary_source": "https://pancanal.com/en/panama-canal-authority-adapts-to-unprecedented-challenges/",
+      "data_bundled": false
+    },
+    {
+      "event_id": "red-sea-rerouting-2023",
+      "family": "maritime_rerouting",
+      "event_start": "2023-12-01",
+      "primary_source": "https://unctad.org/publication/navigating-troubled-waters-impact-global-trade-disruption-shipping-routes-red-sea-black",
+      "data_bundled": false
+    },
+    {
+      "event_id": "taiwan-area-public-window",
+      "family": "aggregate_crisis_window",
+      "event_start": null,
+      "primary_source": "official public notices plus licensed aggregate trade/shipping data",
+      "data_bundled": false,
+      "safety": "No personal, classified, unit-level or targetable infrastructure data."
+    }
+  ]
+}
